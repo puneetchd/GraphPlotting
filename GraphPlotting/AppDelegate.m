@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "GraphView.h"
+#import "GraphAndGoalsController.h"
 
 @implementation AppDelegate
 
@@ -22,6 +24,13 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    GraphAndGoalsController *graphController = [[GraphAndGoalsController alloc]init];
+    //GraphView *graphController = [[GraphView alloc]init];
+    UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:graphController];
+    [self.window setRootViewController:navigation];
+    [graphController release];
+    [navigation release];
     return YES;
 }
 
